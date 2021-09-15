@@ -13,6 +13,7 @@
 		CE64DF5026F1D27F00BFB130 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE64DF4E26F1D27F00BFB130 /* Main.storyboard */; };
 		CE64DF5226F1D28000BFB130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE64DF5126F1D28000BFB130 /* Assets.xcassets */; };
 		CE64DF5526F1D28000BFB130 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE64DF5326F1D28000BFB130 /* LaunchScreen.storyboard */; };
+		CE64DF8526F2069D00BFB130 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE64DF8426F2069D00BFB130 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CE64DF5126F1D28000BFB130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE64DF5426F1D28000BFB130 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE64DF5626F1D28000BFB130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE64DF8426F2069D00BFB130 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				CE64DF4826F1D27F00BFB130 /* AppDelegate.swift */,
 				CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */,
+				CE64DF8426F2069D00BFB130 /* .gitignore */,
 				CE64DF4C26F1D27F00BFB130 /* ViewController.swift */,
 				CE64DF4E26F1D27F00BFB130 /* Main.storyboard */,
 				CE64DF5126F1D28000BFB130 /* Assets.xcassets */,
@@ -124,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE64DF8526F2069D00BFB130 /* .gitignore in Resources */,
 				CE64DF5526F1D28000BFB130 /* LaunchScreen.storyboard in Resources */,
 				CE64DF5226F1D28000BFB130 /* Assets.xcassets in Resources */,
 				CE64DF5026F1D27F00BFB130 /* Main.storyboard in Resources */,
