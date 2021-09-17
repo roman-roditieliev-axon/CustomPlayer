@@ -22,6 +22,42 @@
 		CE64DF7A26F1DF7E00BFB130 /* PodcastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF7926F1DF7E00BFB130 /* PodcastRepository.swift */; };
 		CE64DF7E26F1FC1500BFB130 /* FileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF7D26F1FC1500BFB130 /* FileRepository.swift */; };
 		CE64DF8126F1FF2700BFB130 /* PlayerCommandCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF8026F1FF2700BFB130 /* PlayerCommandCenter.swift */; };
+		CEE5FF6126F495D1007A48D2 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6026F495D1007A48D2 /* PlayerViewController.swift */; };
+		CEE5FF6426F49616007A48D2 /* PlaybackSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6326F49616007A48D2 /* PlaybackSlider.swift */; };
+		CEE5FF6826F4966B007A48D2 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6726F4966B007A48D2 /* PlayerViewModel.swift */; };
+		CEE5FF6C26F4969D007A48D2 /* TimeFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6B26F4969D007A48D2 /* TimeFormatted.swift */; };
+		CEE5FF6F26F496D3007A48D2 /* ReactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6E26F496D3007A48D2 /* ReactionType.swift */; };
+		CEE5FF8E26F498D1007A48D2 /* RemoteAPIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF7926F498D1007A48D2 /* RemoteAPIResponseHandler.swift */; };
+		CEE5FF8F26F498D1007A48D2 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF7B26F498D1007A48D2 /* ParameterEncoding.swift */; };
+		CEE5FF9026F498D1007A48D2 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF7C26F498D1007A48D2 /* URLParameterEncoder.swift */; };
+		CEE5FF9126F498D1007A48D2 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF7D26F498D1007A48D2 /* JSONParameterEncoder.swift */; };
+		CEE5FF9226F498D1007A48D2 /* RemoteResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF7E26F498D1007A48D2 /* RemoteResponseError.swift */; };
+		CEE5FF9326F498D1007A48D2 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8126F498D1007A48D2 /* Auth.swift */; };
+		CEE5FF9426F498D1007A48D2 /* EndPointConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8326F498D1007A48D2 /* EndPointConstants.swift */; };
+		CEE5FF9526F498D1007A48D2 /* PodcastEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8526F498D1007A48D2 /* PodcastEndPoint.swift */; };
+		CEE5FF9626F498D1007A48D2 /* URLRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8626F498D1007A48D2 /* URLRequestError.swift */; };
+		CEE5FF9726F498D1007A48D2 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8826F498D1007A48D2 /* NetworkRouter.swift */; };
+		CEE5FF9826F498D1007A48D2 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8926F498D1007A48D2 /* HTTPTask.swift */; };
+		CEE5FF9926F498D1007A48D2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8A26F498D1007A48D2 /* APIRouter.swift */; };
+		CEE5FF9A26F498D1007A48D2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8B26F498D1007A48D2 /* HTTPMethod.swift */; };
+		CEE5FF9B26F498D1007A48D2 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8C26F498D1007A48D2 /* EndPointType.swift */; };
+		CEE5FF9C26F498D1007A48D2 /* AuthRemoteAPIResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF8D26F498D1007A48D2 /* AuthRemoteAPIResponseHandler.swift */; };
+		CEE5FFAA26F49B23007A48D2 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFA326F49B22007A48D2 /* ResponseError.swift */; };
+		CEE5FFAB26F49B23007A48D2 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFA426F49B22007A48D2 /* NetworkingError.swift */; };
+		CEE5FFAC26F49B23007A48D2 /* AccountRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFA526F49B22007A48D2 /* AccountRepositoryError.swift */; };
+		CEE5FFAD26F49B23007A48D2 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFA626F49B22007A48D2 /* ConnectionError.swift */; };
+		CEE5FFAE26F49B23007A48D2 /* PlayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFA726F49B22007A48D2 /* PlayerError.swift */; };
+		CEE5FFAF26F49B23007A48D2 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFA826F49B22007A48D2 /* ValidationError.swift */; };
+		CEE5FFB026F49B23007A48D2 /* AuthRemoteAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFA926F49B22007A48D2 /* AuthRemoteAPIError.swift */; };
+		CEE5FFB326F4A288007A48D2 /* PodcastsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFB226F4A288007A48D2 /* PodcastsRequest.swift */; };
+		CEE5FFBB26F4A880007A48D2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFBA26F4A880007A48D2 /* UIImageView.swift */; };
+		CEE5FFC826F4A9D7007A48D2 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFC726F4A9D7007A48D2 /* NetworkLogger.swift */; };
+		CEE5FFCC26F4AA84007A48D2 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFCB26F4AA84007A48D2 /* ImageConstants.swift */; };
+		CEE5FFD026F4AAD0007A48D2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFCF26F4AAD0007A48D2 /* Data.swift */; };
+		CEE5FFD326F4ADA4007A48D2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFD226F4ADA4007A48D2 /* TimerViewController.swift */; };
+		CEE5FFDB26F4B2D3007A48D2 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFDA26F4B2D3007A48D2 /* Scheduler.swift */; };
+		CEE5FFDF26F4B487007A48D2 /* SlideUpTimerMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFDE26F4B487007A48D2 /* SlideUpTimerMenuCell.swift */; };
+		CEE5FFE226F4B4A9007A48D2 /* SlideUpTimerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFE126F4B4A9007A48D2 /* SlideUpTimerOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +80,42 @@
 		CE64DF7926F1DF7E00BFB130 /* PodcastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastRepository.swift; sourceTree = "<group>"; };
 		CE64DF7D26F1FC1500BFB130 /* FileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRepository.swift; sourceTree = "<group>"; };
 		CE64DF8026F1FF2700BFB130 /* PlayerCommandCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCommandCenter.swift; sourceTree = "<group>"; };
+		CEE5FF6026F495D1007A48D2 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		CEE5FF6326F49616007A48D2 /* PlaybackSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSlider.swift; sourceTree = "<group>"; };
+		CEE5FF6726F4966B007A48D2 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		CEE5FF6B26F4969D007A48D2 /* TimeFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatted.swift; sourceTree = "<group>"; };
+		CEE5FF6E26F496D3007A48D2 /* ReactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionType.swift; sourceTree = "<group>"; };
+		CEE5FF7926F498D1007A48D2 /* RemoteAPIResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAPIResponseHandler.swift; sourceTree = "<group>"; };
+		CEE5FF7B26F498D1007A48D2 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		CEE5FF7C26F498D1007A48D2 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		CEE5FF7D26F498D1007A48D2 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		CEE5FF7E26F498D1007A48D2 /* RemoteResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteResponseError.swift; sourceTree = "<group>"; };
+		CEE5FF8126F498D1007A48D2 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		CEE5FF8326F498D1007A48D2 /* EndPointConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointConstants.swift; sourceTree = "<group>"; };
+		CEE5FF8526F498D1007A48D2 /* PodcastEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastEndPoint.swift; sourceTree = "<group>"; };
+		CEE5FF8626F498D1007A48D2 /* URLRequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestError.swift; sourceTree = "<group>"; };
+		CEE5FF8826F498D1007A48D2 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		CEE5FF8926F498D1007A48D2 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		CEE5FF8A26F498D1007A48D2 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		CEE5FF8B26F498D1007A48D2 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		CEE5FF8C26F498D1007A48D2 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		CEE5FF8D26F498D1007A48D2 /* AuthRemoteAPIResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRemoteAPIResponseHandler.swift; sourceTree = "<group>"; };
+		CEE5FFA326F49B22007A48D2 /* ResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		CEE5FFA426F49B22007A48D2 /* NetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		CEE5FFA526F49B22007A48D2 /* AccountRepositoryError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountRepositoryError.swift; sourceTree = "<group>"; };
+		CEE5FFA626F49B22007A48D2 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
+		CEE5FFA726F49B22007A48D2 /* PlayerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerError.swift; sourceTree = "<group>"; };
+		CEE5FFA826F49B22007A48D2 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		CEE5FFA926F49B22007A48D2 /* AuthRemoteAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRemoteAPIError.swift; sourceTree = "<group>"; };
+		CEE5FFB226F4A288007A48D2 /* PodcastsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsRequest.swift; sourceTree = "<group>"; };
+		CEE5FFBA26F4A880007A48D2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		CEE5FFC726F4A9D7007A48D2 /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		CEE5FFCB26F4AA84007A48D2 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
+		CEE5FFCF26F4AAD0007A48D2 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		CEE5FFD226F4ADA4007A48D2 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		CEE5FFDA26F4B2D3007A48D2 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		CEE5FFDE26F4B487007A48D2 /* SlideUpTimerMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpTimerMenuCell.swift; sourceTree = "<group>"; };
+		CEE5FFE126F4B4A9007A48D2 /* SlideUpTimerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpTimerOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,18 +160,21 @@
 		CE64DF4726F1D27F00BFB130 /* CustomPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				CE64DF5626F1D28000BFB130 /* Info.plist */,
 				CE64DF4826F1D27F00BFB130 /* AppDelegate.swift */,
 				CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */,
-				CE64DF7826F1DF6600BFB130 /* Services */,
-				CE64DF7326F1DBC100BFB130 /* CustomClasses */,
-				CE64DF6526F1D8F400BFB130 /* Models */,
-				CE64DF5E26F1D7BC00BFB130 /* AudioPlayer */,
-				CE64DF6426F1D82300BFB130 /* ViewControllers */,
-				CE64DF6326F1D81100BFB130 /* NetworkManager */,
-				CE64DF4E26F1D27F00BFB130 /* Main.storyboard */,
 				CE64DF5126F1D28000BFB130 /* Assets.xcassets */,
-				CE64DF5326F1D28000BFB130 /* LaunchScreen.storyboard */,
-				CE64DF5626F1D28000BFB130 /* Info.plist */,
+				CE64DF5E26F1D7BC00BFB130 /* AudioPlayer */,
+				CE64DF7326F1DBC100BFB130 /* CustomClasses */,
+				CEE5FFA226F49B22007A48D2 /* Errors */,
+				CEE5FFB926F4A870007A48D2 /* Extensions */,
+				CEE5FFCA26F4AA6F007A48D2 /* ImageConstants */,
+				CE64DF6526F1D8F400BFB130 /* Models */,
+				CE64DF6326F1D81100BFB130 /* NetworkManager */,
+				CE64DF7826F1DF6600BFB130 /* Services */,
+				CEE5FFE526F4B59F007A48D2 /* Storyboards */,
+				CE64DF6426F1D82300BFB130 /* ViewControllers */,
+				CEE5FF6626F49658007A48D2 /* ViewModels */,
 			);
 			path = CustomPlayer;
 			sourceTree = "<group>";
@@ -118,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				CE64DF6C26F1DA4800BFB130 /* NetworkManager.swift */,
+				CEE5FFC726F4A9D7007A48D2 /* NetworkLogger.swift */,
+				CEE5FF7826F498D1007A48D2 /* Networking */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -125,7 +202,10 @@
 		CE64DF6426F1D82300BFB130 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEE5FF6026F495D1007A48D2 /* PlayerViewController.swift */,
+				CEE5FFD226F4ADA4007A48D2 /* TimerViewController.swift */,
 				CE64DF4C26F1D27F00BFB130 /* ViewController.swift */,
+				CEE5FFDD26F4B487007A48D2 /* SlideUpTimerMenuCell */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -134,6 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				CE64DF6626F1D90A00BFB130 /* Podcast.swift */,
+				CEE5FFB226F4A288007A48D2 /* PodcastsRequest.swift */,
+				CEE5FF6E26F496D3007A48D2 /* ReactionType.swift */,
+				CEE5FFE126F4B4A9007A48D2 /* SlideUpTimerOptions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,6 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				CE64DF7426F1DBE000BFB130 /* MulticastDelegate.swift */,
+				CEE5FF6326F49616007A48D2 /* PlaybackSlider.swift */,
+				CEE5FFDA26F4B2D3007A48D2 /* Scheduler.swift */,
+				CEE5FF6B26F4969D007A48D2 /* TimeFormatted.swift */,
 			);
 			path = CustomClasses;
 			sourceTree = "<group>";
@@ -149,10 +235,136 @@
 		CE64DF7826F1DF6600BFB130 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CE64DF7926F1DF7E00BFB130 /* PodcastRepository.swift */,
 				CE64DF7D26F1FC1500BFB130 /* FileRepository.swift */,
+				CE64DF7926F1DF7E00BFB130 /* PodcastRepository.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CEE5FF6626F49658007A48D2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FF6726F4966B007A48D2 /* PlayerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CEE5FF7826F498D1007A48D2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FF8D26F498D1007A48D2 /* AuthRemoteAPIResponseHandler.swift */,
+				CEE5FF7926F498D1007A48D2 /* RemoteAPIResponseHandler.swift */,
+				CEE5FF7E26F498D1007A48D2 /* RemoteResponseError.swift */,
+				CEE5FF8626F498D1007A48D2 /* URLRequestError.swift */,
+				CEE5FF7A26F498D1007A48D2 /* Encoding */,
+				CEE5FF7F26F498D1007A48D2 /* EndPoint */,
+				CEE5FF8726F498D1007A48D2 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CEE5FF7A26F498D1007A48D2 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FF7B26F498D1007A48D2 /* ParameterEncoding.swift */,
+				CEE5FF7C26F498D1007A48D2 /* URLParameterEncoder.swift */,
+				CEE5FF7D26F498D1007A48D2 /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		CEE5FF7F26F498D1007A48D2 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FF8026F498D1007A48D2 /* Auth */,
+				CEE5FF8226F498D1007A48D2 /* EndPointConstants */,
+				CEE5FF8426F498D1007A48D2 /* Podcasts */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		CEE5FF8026F498D1007A48D2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FF8126F498D1007A48D2 /* Auth.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		CEE5FF8226F498D1007A48D2 /* EndPointConstants */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FF8326F498D1007A48D2 /* EndPointConstants.swift */,
+			);
+			path = EndPointConstants;
+			sourceTree = "<group>";
+		};
+		CEE5FF8426F498D1007A48D2 /* Podcasts */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FF8526F498D1007A48D2 /* PodcastEndPoint.swift */,
+			);
+			path = Podcasts;
+			sourceTree = "<group>";
+		};
+		CEE5FF8726F498D1007A48D2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FF8826F498D1007A48D2 /* NetworkRouter.swift */,
+				CEE5FF8926F498D1007A48D2 /* HTTPTask.swift */,
+				CEE5FF8A26F498D1007A48D2 /* APIRouter.swift */,
+				CEE5FF8B26F498D1007A48D2 /* HTTPMethod.swift */,
+				CEE5FF8C26F498D1007A48D2 /* EndPointType.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CEE5FFA226F49B22007A48D2 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FFA526F49B22007A48D2 /* AccountRepositoryError.swift */,
+				CEE5FFA926F49B22007A48D2 /* AuthRemoteAPIError.swift */,
+				CEE5FFA626F49B22007A48D2 /* ConnectionError.swift */,
+				CEE5FFA426F49B22007A48D2 /* NetworkingError.swift */,
+				CEE5FFA726F49B22007A48D2 /* PlayerError.swift */,
+				CEE5FFA326F49B22007A48D2 /* ResponseError.swift */,
+				CEE5FFA826F49B22007A48D2 /* ValidationError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		CEE5FFB926F4A870007A48D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FFCF26F4AAD0007A48D2 /* Data.swift */,
+				CEE5FFBA26F4A880007A48D2 /* UIImageView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEE5FFCA26F4AA6F007A48D2 /* ImageConstants */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FFCB26F4AA84007A48D2 /* ImageConstants.swift */,
+			);
+			path = ImageConstants;
+			sourceTree = "<group>";
+		};
+		CEE5FFDD26F4B487007A48D2 /* SlideUpTimerMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FFDE26F4B487007A48D2 /* SlideUpTimerMenuCell.swift */,
+			);
+			path = SlideUpTimerMenuCell;
+			sourceTree = "<group>";
+		};
+		CEE5FFE526F4B59F007A48D2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE64DF5326F1D28000BFB130 /* LaunchScreen.storyboard */,
+				CE64DF4E26F1D27F00BFB130 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		E28E556AC7925E6CC10A3BA8 /* Frameworks */ = {
@@ -277,17 +489,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE5FF9826F498D1007A48D2 /* HTTPTask.swift in Sources */,
+				CEE5FFB326F4A288007A48D2 /* PodcastsRequest.swift in Sources */,
 				CE64DF4D26F1D27F00BFB130 /* ViewController.swift in Sources */,
 				CE64DF6A26F1D98900BFB130 /* CachingPlayerItem.swift in Sources */,
+				CEE5FF9926F498D1007A48D2 /* APIRouter.swift in Sources */,
 				CE64DF4926F1D27F00BFB130 /* AppDelegate.swift in Sources */,
+				CEE5FF9526F498D1007A48D2 /* PodcastEndPoint.swift in Sources */,
+				CEE5FFCC26F4AA84007A48D2 /* ImageConstants.swift in Sources */,
+				CEE5FF6426F49616007A48D2 /* PlaybackSlider.swift in Sources */,
+				CEE5FFAF26F49B23007A48D2 /* ValidationError.swift in Sources */,
+				CEE5FFAA26F49B23007A48D2 /* ResponseError.swift in Sources */,
+				CEE5FFB026F49B23007A48D2 /* AuthRemoteAPIError.swift in Sources */,
+				CEE5FF6F26F496D3007A48D2 /* ReactionType.swift in Sources */,
+				CEE5FFC826F4A9D7007A48D2 /* NetworkLogger.swift in Sources */,
+				CEE5FFE226F4B4A9007A48D2 /* SlideUpTimerOptions.swift in Sources */,
+				CEE5FF9A26F498D1007A48D2 /* HTTPMethod.swift in Sources */,
+				CEE5FF9126F498D1007A48D2 /* JSONParameterEncoder.swift in Sources */,
+				CEE5FFAE26F49B23007A48D2 /* PlayerError.swift in Sources */,
+				CEE5FF9C26F498D1007A48D2 /* AuthRemoteAPIResponseHandler.swift in Sources */,
+				CEE5FFDB26F4B2D3007A48D2 /* Scheduler.swift in Sources */,
+				CEE5FFBB26F4A880007A48D2 /* UIImageView.swift in Sources */,
 				CE64DF7526F1DBE000BFB130 /* MulticastDelegate.swift in Sources */,
+				CEE5FFD326F4ADA4007A48D2 /* TimerViewController.swift in Sources */,
+				CEE5FFAB26F49B23007A48D2 /* NetworkingError.swift in Sources */,
+				CEE5FF6826F4966B007A48D2 /* PlayerViewModel.swift in Sources */,
 				CE64DF6D26F1DA4800BFB130 /* NetworkManager.swift in Sources */,
+				CEE5FFDF26F4B487007A48D2 /* SlideUpTimerMenuCell.swift in Sources */,
+				CEE5FF9026F498D1007A48D2 /* URLParameterEncoder.swift in Sources */,
+				CEE5FF6126F495D1007A48D2 /* PlayerViewController.swift in Sources */,
+				CEE5FF9226F498D1007A48D2 /* RemoteResponseError.swift in Sources */,
+				CEE5FF9326F498D1007A48D2 /* Auth.swift in Sources */,
+				CEE5FF9B26F498D1007A48D2 /* EndPointType.swift in Sources */,
+				CEE5FFD026F4AAD0007A48D2 /* Data.swift in Sources */,
 				CE64DF7A26F1DF7E00BFB130 /* PodcastRepository.swift in Sources */,
 				CE64DF4B26F1D27F00BFB130 /* SceneDelegate.swift in Sources */,
+				CEE5FF9426F498D1007A48D2 /* EndPointConstants.swift in Sources */,
+				CEE5FF9626F498D1007A48D2 /* URLRequestError.swift in Sources */,
+				CEE5FF8E26F498D1007A48D2 /* RemoteAPIResponseHandler.swift in Sources */,
 				CE64DF6026F1D7FC00BFB130 /* AudioPlayer.swift in Sources */,
+				CEE5FF8F26F498D1007A48D2 /* ParameterEncoding.swift in Sources */,
 				CE64DF6726F1D90A00BFB130 /* Podcast.swift in Sources */,
 				CE64DF7E26F1FC1500BFB130 /* FileRepository.swift in Sources */,
+				CEE5FF6C26F4969D007A48D2 /* TimeFormatted.swift in Sources */,
 				CE64DF8126F1FF2700BFB130 /* PlayerCommandCenter.swift in Sources */,
+				CEE5FFAC26F49B23007A48D2 /* AccountRepositoryError.swift in Sources */,
+				CEE5FFAD26F49B23007A48D2 /* ConnectionError.swift in Sources */,
+				CEE5FF9726F498D1007A48D2 /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
