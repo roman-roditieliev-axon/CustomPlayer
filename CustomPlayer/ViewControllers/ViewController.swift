@@ -12,15 +12,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var audioUrlTextField: UITextField!
     @IBOutlet weak var playLocaleAudioButton: UIButton!
 
-    private let podcastRepo = PodcastRepository.shared
-
     override func viewDidLoad() {
         super.viewDidLoad()
         audioUrlTextField.delegate = self
     }
 
     private func openPlayer(with model: Podcast) {
-        let viewModel = PlayerViewModel(podcastRepo: podcastRepo)
+        let viewModel = PlayerViewModel()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController: PlayerViewController = storyboard.instantiateViewController(identifier: "PlayerViewController")
         viewController.viewModel = viewModel
@@ -29,7 +27,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func playLocaleAudioAction(_ sender: Any) {
-        let podcast = Podcast(title: "PMO title", duration: TimeInterval(27), likeCount: 2, url: URL(string: "http://podcasts.cnn.net/cnn/services/podcasting/onscreen/audio/2007/05/onscreen0508.mp3"), podcastID: "339071d2-fa42-4f61-992e-f30c28ef90ae", createAt: "2021-07-21T06:48:29.942024", status: "", reactionType: .liked)
+        //https://s3.amazonaws.com/kargopolov/kukushka.mp3
+        //https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3
+
+        let stringUrl = "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+        let url = URL(string: stringUrl)!
+        let name = stringUrl.split(separator: "/").last!
+
+        let podcast = Podcast(title: String(name), duration: TimeInterval(27), likeCount: 2, url: url, podcastID: String(name), createAt: "2021-07-21T06:48:29.942024", status: "", reactionType: .liked)
         openPlayer(with: podcast)
     }
 

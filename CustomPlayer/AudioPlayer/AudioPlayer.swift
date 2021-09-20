@@ -41,7 +41,6 @@ final class AudioPlayer {
     weak var miniPlayerDelegate: MiniPlayerPresenterDelegate?
     private let seekDuration: Double = 15
     private var displayLink: CADisplayLink?
-    private let podcastRepo = PodcastRepository()
     private let network = NetworkManager.sharedInstance
     private var commandCenter: PlayerCommandCenterType?
     private let storageRepository = FileRepository.shared
@@ -115,31 +114,21 @@ final class AudioPlayer {
     }
 
     private func playFromRemoteAndCache(podcast: Podcast) {
-        podcastRepo.getSinglePodcast(by: podcast.podcastID) { [weak self] result in
-            switch result {
-            case .success(let model):
-                self?.podcast = model
-                guard let self = self,
-                      let url = model.audioURL else { return }
-                self.podcast?.audioURL = model.audioURL
-                self.playerItem = CachingPlayerItem(url: url, customFileExtension: "mp3")
-                self.playerItem.delegate = self
-                self.player = AVPlayer(playerItem: self.playerItem)
-                self.player.automaticallyWaitsToMinimizeStalling = false
-                NotificationCenter.default.addObserver(self, selector: #selector(self.didFinishPlaying(_ :)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.playerItem)
-                self.network.networkMulticast.addDelegate(self)
-                self.miniPlayerDelegate?.presentMiniPlayer()
-                self.duration = Float(self.podcast?.duration ?? 0)
-                self.didLoad()
-                self.delegate?.updateUIInfo()
-                self.commandCenter = PlayerCommandCenter.init(player: self.player, playerItem: self.playerItem)
-                self.multicast.invokeDelegates({ delegate in delegate.didGetData() })
-                self.updatePlaybackInfo()
-                self.startPlaying()
-            case .failure(let error):
-                self?.onError(error.localizedDescription)
-            }
-        }
+        self.podcast?.audioURL = podcast.audioURL
+        self.playerItem = CachingPlayerItem(url: podcast.audioURL!, customFileExtension: "mp3")
+        self.playerItem.delegate = self
+        self.player = AVPlayer(playerItem: self.playerItem)
+        self.player.automaticallyWaitsToMinimizeStalling = false
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didFinishPlaying(_ :)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.playerItem)
+        self.network.networkMulticast.addDelegate(self)
+        self.miniPlayerDelegate?.presentMiniPlayer()
+        self.duration = Float(self.podcast?.duration ?? 0)
+        self.didLoad()
+        self.delegate?.updateUIInfo()
+        self.commandCenter = PlayerCommandCenter.init(player: self.player, playerItem: self.playerItem)
+        self.multicast.invokeDelegates({ delegate in delegate.didGetData() })
+        self.updatePlaybackInfo()
+        self.startPlaying()
     }
 
     /// Update playback info using timer

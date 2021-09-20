@@ -188,15 +188,15 @@ class APIRouter<EndPoint: EndPointType>: NetworkRouter {
     }
     
     private func refreshToken(completion: @escaping (Result<String, Error>) -> Void) {
-        UserAccountRepository.shared.refreshToken { result in
-            switch result {
-            case .success(let data):
-                completion(.success(data.accessToken))
-                UserDefaults.standard.setValue(data.accessToken, forKey: EndPointConstants.userDefaultsTokenKey)
-            case .failure(_):
-                UserAccountRepository.shared.delegate?.logout()
-            }
-        }
+//        UserAccountRepository.shared.refreshToken { result in
+//            switch result {
+//            case .success(let data):
+//                completion(.success(data.accessToken))
+//                UserDefaults.standard.setValue(data.accessToken, forKey: EndPointConstants.userDefaultsTokenKey)
+//            case .failure(_):
+//                UserAccountRepository.shared.delegate?.logout()
+//            }
+//        }
     }
     
     /// Create download task

@@ -31,13 +31,10 @@ class PlayerViewModel: PlayerViewModeling {
     var likeStatus: LikeStatus { podcast?.reactionType ?? .undefined }
     let multicast = MulticastDelegate<PlayerViewModelMultiDelegate>()
 
-    private var podcastRepo: PodcastRepositoryProtocol
     private var audioPlayer = AudioPlayer.shared
     private lazy var podcast = audioPlayer.podcast
-//    private var accountRepo = UserAccountRepository.shared
 
-    init(podcastRepo: PodcastRepositoryProtocol) {
-        self.podcastRepo = podcastRepo
+    init() {
         audioPlayer.delegate = self
     }
 
@@ -88,39 +85,15 @@ class PlayerViewModel: PlayerViewModeling {
     }
 
     private func setReaction(reaction: LikeStatus) {
-        guard let podcast = podcast?.podcastID else { return }
-//        self.podcastRepo.setReaction(with: ReactionType.init(id: podcast, reaction: reaction.rawValue)) { [weak self] result in
-//            switch result {
-//            case .success(_):
-//                self?.updateUI()
-//            case .failure(let error):
-//                self?.onError(error: error.localizedDescription)
-//            }
-//        }
+
     }
 
     private func removeReaction(reaction: LikeStatus) {
-        guard let podcast = podcast?.podcastID else { return }
-//        self.podcastRepo.removeReaction(with: ReactionType.init(id: podcast, reaction: reaction.rawValue)) { [weak self] result in
-//            switch result {
-//            case .success(_):
-//                self?.updateUI()
-//            case .failure(let error):
-//                self?.onError(error: error.localizedDescription)
-//            }
-//        }
+
     }
 
     private func removeAndSetNewReaction(oldReaction: LikeStatus, newReaction: LikeStatus) {
-        guard let podcast = podcast?.podcastID else { return }
-//        podcastRepo.removeReaction(with: ReactionType.init(id: podcast, reaction: oldReaction.rawValue)) { [weak self] result in
-//            switch result {
-//            case .success(_):
-//                self?.setReaction(reaction: newReaction)
-//            case .failure(let error):
-//                self?.onError(error: error.localizedDescription)
-//            }
-//        }
+
     }
 
     func didTapAddToFavorites() { }
