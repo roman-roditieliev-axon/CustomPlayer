@@ -9,6 +9,7 @@ target 'CustomPlayer' do
 pod 'ReachabilitySwift'
 pod 'Kingfisher'
 pod 'FittedSheets'
+pod "EFAutoScrollLabel"
 
 
 end

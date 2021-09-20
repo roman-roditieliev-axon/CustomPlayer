@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="CustomPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--Player View Controller-->
         <scene sceneID="vf7-WU-hLU">
             <objects>
-                <viewController storyboardIdentifier="PlayerViewController" id="Ifd-yU-PbR" customClass="PlayerViewController" customModule="AxonPodcasts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerViewController" id="Ifd-yU-PbR" customClass="PlayerViewController" customModule="CustomPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v67-WE-6mx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VXR-wg-yiA" userLabel="Slider">
                                         <rect key="frame" x="16" y="422" width="382" height="40"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Keq-4L-GD8" customClass="PlaybackSlider" customModule="AxonPodcasts" customModuleProvider="target">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Keq-4L-GD8" customClass="PlaybackSlider" customModule="CustomPlayer" customModuleProvider="target">
                                                 <rect key="frame" x="-2" y="0.0" width="386" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="th2-W9-840"/>
