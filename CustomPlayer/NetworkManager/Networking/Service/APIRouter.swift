@@ -151,26 +151,26 @@ class APIRouter<EndPoint: EndPointType>: NetworkRouter {
                 self.unauthorizedRequests.append(requestToRetry)
                 if !self.isRefreshing {
                     self.isRefreshing = true
-//                    self.refreshToken { result in
-//                        switch result {
-//                        case .success(let newToken):
-//                            var modifiedRequests = self.unauthorizedRequests.map { incompleteRequest -> IncompletedRequest in
-//                                var request = incompleteRequest.request
-//                                request.allHTTPHeaderFields?["Authorization"] = "Bearer " + newToken
-//                                return IncompletedRequest(request: request, completion: incompleteRequest.completion)
-//                            }
-//                            // Retrying old requests
-//                            modifiedRequests.forEach { incompleteRequest in
-//                                let task = createURLTask(request: incompleteRequest.request, responseHandler: responseHandler, completion: incompleteRequest.completion)
-//                                task.resume()
-//                            }
-//                            modifiedRequests.removeAll()
-//                            unauthorizedRequests.removeAll()
-//                        case .failure(let error):
-//                            completion(.failure(error))
-//                        }
-//                        self.isRefreshing = false
-//                    }
+                    self.refreshToken { result in
+                        switch result {
+                        case .success(let newToken):
+                            var modifiedRequests = self.unauthorizedRequests.map { incompleteRequest -> IncompletedRequest in
+                                var request = incompleteRequest.request
+                                request.allHTTPHeaderFields?["Authorization"] = "Bearer " + newToken
+                                return IncompletedRequest(request: request, completion: incompleteRequest.completion)
+                            }
+                            // Retrying old requests
+                            modifiedRequests.forEach { incompleteRequest in
+                                let task = createURLTask(request: incompleteRequest.request, responseHandler: responseHandler, completion: incompleteRequest.completion)
+                                task.resume()
+                            }
+                            modifiedRequests.removeAll()
+                            unauthorizedRequests.removeAll()
+                        case .failure(let error):
+                            completion(.failure(error))
+                        }
+                        self.isRefreshing = false
+                    }
                 }
                 return
             }
@@ -187,17 +187,17 @@ class APIRouter<EndPoint: EndPointType>: NetworkRouter {
         })
     }
     
-//    private func refreshToken(completion: @escaping (Result<String, Error>) -> Void) {
-//        UserAccountRepository.shared.refreshToken { result in
-//            switch result {
-//            case .success(let data):
-//                completion(.success(data.accessToken))
-//                UserDefaults.standard.setValue(data.accessToken, forKey: EndPointConstants.userDefaultsTokenKey)
-//            case .failure(_):
-//                UserAccountRepository.shared.delegate?.logout()
-//            }
-//        }
-//    }
+    private func refreshToken(completion: @escaping (Result<String, Error>) -> Void) {
+        UserAccountRepository.shared.refreshToken { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data.accessToken))
+                UserDefaults.standard.setValue(data.accessToken, forKey: EndPointConstants.userDefaultsTokenKey)
+            case .failure(_):
+                UserAccountRepository.shared.delegate?.logout()
+            }
+        }
+    }
     
     /// Create download task
     private func createDownloadTask(_ route: EndPoint, responseHandler: RemoteAPIResponseHandler?, completion: @escaping (Result<(localUrl: URL?, response: URLResponse?), Error>) -> Void) -> URLSessionDownloadTask? {

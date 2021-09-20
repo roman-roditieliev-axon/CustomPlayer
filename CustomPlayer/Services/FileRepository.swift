@@ -40,7 +40,8 @@ class FileRepository: FileRepositoryProtocol {
                 }
             }
         } else {
-            completion(.failure("PlayerError.noData" as! Error))
+            let errorTemp = NSError(domain: "", code: 401, userInfo: nil)
+            completion(.failure(errorTemp))
         }
     }
 
