@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //https://s3.amazonaws.com/kargopolov/kukushka.mp3
         //https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3
 
-        let stringUrl = "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+        let stringUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
         let url = URL(string: stringUrl)!
         let name = stringUrl.split(separator: "/").last!
 
