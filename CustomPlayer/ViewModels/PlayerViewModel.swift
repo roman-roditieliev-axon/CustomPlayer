@@ -30,12 +30,12 @@ class PlayerViewModel: PlayerViewModeling {
     var dislikeCount: Int { podcast?.dislikeCount ?? 0 }
     var likeStatus: LikeStatus { podcast?.reactionType ?? .undefined }
     let multicast = MulticastDelegate<PlayerViewModelMultiDelegate>()
+    var audioPlayer: AudioPlayer?
 
-    private var audioPlayer = AudioPlayer.shared
-    private lazy var podcast = audioPlayer.podcast
+    private lazy var podcast = audioPlayer?.podcast
 
     init() {
-        audioPlayer.delegate = self
+        audioPlayer?.delegate = self
     }
 
     func didTapLikeButton() {

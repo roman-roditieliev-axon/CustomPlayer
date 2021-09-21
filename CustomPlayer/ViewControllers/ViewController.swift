@@ -16,10 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var audioUrlTextField: UITextField!
     @IBOutlet weak var playLocaleAudioButton: UIButton!
 
+    private let player = AudioPlayer()
+
     // MARK: - create mini player
     lazy var miniPlayerVC: MiniPlayerViewController = {
         let view = MiniPlayerViewController()
         view.viewModel = viewModel
+        view.audioPlayer = self.player
         view.delegate = self
         return view
     }()
@@ -36,7 +39,7 @@ class ViewController: UIViewController {
     // MARK: - Configure mini player
     override func viewDidLoad() {
         super.viewDidLoad()
-        AudioPlayer.shared.miniPlayerDelegate = self
+        player.miniPlayerDelegate = self
     }
 
     private func configureView() {
@@ -76,14 +79,16 @@ class ViewController: UIViewController {
     // MARK: - Open player
     private func openPlayer(with model: Podcast) {
         presentMainPlayer()
-        AudioPlayer.shared.playPodcast(with: model, completion: nil)
+        player.playPodcast(with: model, completion: nil)
     }
 
     private func presentMainPlayer() {
         let viewModel = PlayerViewModel()
+        viewModel.audioPlayer = self.player
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController: PlayerViewController = storyboard.instantiateViewController(identifier: "PlayerViewController")
         viewController.viewModel = viewModel
+        viewController.audioService = self.player
         self.present(viewController, animated: true, completion: nil)
     }
 }

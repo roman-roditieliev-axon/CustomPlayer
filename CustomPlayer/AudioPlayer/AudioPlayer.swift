@@ -28,7 +28,7 @@ protocol AudioPlayerDelegate: AnyObject {
     func resetView()
 }
 
-final class AudioPlayer {
+ class AudioPlayer {
     var onError: (String) -> Void = { _ in }
     var isLoading = { }
     var didLoad = { }
@@ -43,7 +43,6 @@ final class AudioPlayer {
     private var displayLink: CADisplayLink?
     private var commandCenter: PlayerCommandCenterType?
     private let storageRepository = FileRepository.shared
-    static let shared = AudioPlayer()
 
     var duration: Float = 0.0
 

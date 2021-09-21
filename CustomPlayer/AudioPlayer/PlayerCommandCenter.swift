@@ -16,7 +16,7 @@ protocol PlayerCommandCenterType {
 class PlayerCommandCenter: PlayerCommandCenterType {
     private var player: AVPlayer
     private var playerItem: AVPlayerItem
-    private var audioPlayer = AudioPlayer.shared
+    private var audioPlayer: AudioPlayer?
     private var nowPlayingInfo = [String: Any]()
     private let commandCenter = MPRemoteCommandCenter.shared()
     private let playingInfoCenter = MPNowPlayingInfoCenter.default()
@@ -41,7 +41,7 @@ class PlayerCommandCenter: PlayerCommandCenterType {
             command.isEnabled = true
             command.preferredIntervals = [intervalForForwardBackwardCommands]
             command.addTarget { [weak self] _ in
-                self?.audioPlayer.seekTime(direction: command == self?.commandCenter.skipForwardCommand ? .forward : .backwards)
+                self?.audioPlayer?.seekTime(direction: command == self?.commandCenter.skipForwardCommand ? .forward : .backwards)
                 return .success
             }
         }
@@ -54,12 +54,12 @@ class PlayerCommandCenter: PlayerCommandCenterType {
             command.addTarget { [weak self] _ in
                 guard let self = self else { return .commandFailed }
                 if command == self.commandCenter.playCommand {
-                    self.audioPlayer.startPlaying()
+                    self.audioPlayer?.startPlaying()
                 } else {
-                    self.audioPlayer.stopPlaying()
+                    self.audioPlayer?.stopPlaying()
                 }
                 self.nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = CMTimeGetSeconds((self.player.currentTime()))
-                self.nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = command == self.commandCenter.playCommand ? self.audioPlayer.playBackSpeed : 0
+                self.nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = command == self.commandCenter.playCommand ? self.audioPlayer?.playBackSpeed : 0
                 self.playingInfoCenter.nowPlayingInfo = self.nowPlayingInfo
                 return .success
             }
@@ -80,18 +80,18 @@ class PlayerCommandCenter: PlayerCommandCenterType {
     func setupNowPlaying() {
         guard let currentTime = player.currentItem?.currentTime(),
               let duration = player.currentItem?.duration else { return }
-        nowPlayingInfo[MPMediaItemPropertyTitle] = audioPlayer.podcast?.title
+        nowPlayingInfo[MPMediaItemPropertyTitle] = audioPlayer?.podcast?.title
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = CMTimeGetSeconds(currentTime)
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = CMTimeGetSeconds(duration)
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = defaultPlaybackRate
-        nowPlayingInfo[MPMediaItemPropertyTitle] = audioPlayer.podcast?.title
-        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = audioPlayer.podcast?.podcastDescription
+        nowPlayingInfo[MPMediaItemPropertyTitle] = audioPlayer?.podcast?.title
+        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = audioPlayer?.podcast?.podcastDescription
         playingInfoCenter.nowPlayingInfo = nowPlayingInfo
     }
 
     /// Set up now playing art image for album/podcast
     func setupNowPlayingArt() {
-        guard let imageURL = audioPlayer.podcast?.imageURL else { return }
+        guard let imageURL = audioPlayer?.podcast?.imageURL else { return }
         KingfisherManager.shared.retrieveImage(with: imageURL) { [weak self] result in
             guard let self = self else { return }
             switch result {

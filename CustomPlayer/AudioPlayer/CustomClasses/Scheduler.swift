@@ -15,7 +15,7 @@ final class Scheduler {
     var timer: Timer!
     var endTime: Float = 0
     var schedulerMulticast = MulticastDelegate<SchedulerTimerViewControllerDelegate>()
-    private var audioPlayer = AudioPlayer.shared
+    private var audioPlayer: AudioPlayer?
     
     static let shared = Scheduler()
     
@@ -29,11 +29,12 @@ final class Scheduler {
         if self.timer != nil {
             self.timer = nil
         }
-        
-        if audioPlayer.currentTime + endTime > audioPlayer.duration {
-            self.endTime = audioPlayer.duration
+
+        guard let player = self.audioPlayer else { return }
+        if player.currentTime + endTime > player.duration {
+            self.endTime = player.duration
         } else {
-            self.endTime = audioPlayer.currentTime + endTime
+            self.endTime = player.currentTime + endTime
         }
         
         setupTimer()
@@ -45,16 +46,18 @@ final class Scheduler {
     }
     
     @objc private func update() {
-        if audioPlayer.currentTime >= self.endTime {
-            audioPlayer.stopPlaying()
+        guard let player = self.audioPlayer else { return }
+
+        if player.currentTime >= self.endTime {
+            player.stopPlaying()
             self.timer.invalidate()
         }
         
-        if audioPlayer.player == nil {
+        if player.player == nil {
             timer.invalidate()
         }
         
-        currentTime = self.endTime - audioPlayer.currentTime
+        currentTime = self.endTime - player.currentTime
         
         self.currentTime = Float(currentTime)
     }

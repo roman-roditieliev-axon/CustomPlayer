@@ -10,9 +10,9 @@ import UIKit
 
 final class MiniPlayerViewController: UIViewController {
     var viewModel: PlayerViewModeling!
+    var audioPlayer: AudioPlayer?
     weak var delegate: MiniPlayerViewControllerDelegate?
     static let playerHeight: CGFloat = 58
-    private let audioPlayer = AudioPlayer.shared
 
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
@@ -50,15 +50,15 @@ final class MiniPlayerViewController: UIViewController {
         super.viewDidLoad()
         setUpView()
         setControlButtonsEnabledState(isEnabled: false)
-        audioPlayer.multicast.addDelegate(self)
+        audioPlayer?.multicast.addDelegate(self)
         setupGestureRecognizer()
         playerUpdateIfNeeded()
     }
 
     /// If player still in memory method will update UI
     private func playerUpdateIfNeeded() {
-        guard audioPlayer.player != nil else { return }
-        audioPlayer.multicast.invokeDelegates({ delegate in
+        guard let player = self.audioPlayer else { return }
+        player.multicast.invokeDelegates({ delegate in
             delegate.didGetData()
         })
     }
@@ -102,7 +102,9 @@ final class MiniPlayerViewController: UIViewController {
 // MARK: - Extension for selector methods
 extension MiniPlayerViewController {
     @objc private func didTapPlayPauseButton() {
-        audioPlayer.isPlaying ? audioPlayer.stopPlaying() : audioPlayer.startPlaying()
+        guard let player = self.audioPlayer else { return }
+
+        player.isPlaying ? player.stopPlaying() : player.startPlaying()
     }
 }
 
@@ -111,12 +113,14 @@ extension MiniPlayerViewController: AudioPlayerDelegate {
     func playbackInfoChanged(duration: Float, currentTime: Float, playbackSpeed: Double) { }
 
     func setPlayButtonState() {
-        audioPlayer.isPlaying ? playButton.setImage(PlayerImageConstants.miniPauseButton, for: .normal) : playButton.setImage(PlayerImageConstants.miniPlayButton, for: .normal)
+        guard let player = self.audioPlayer else { return }
+
+        player.isPlaying ? playButton.setImage(PlayerImageConstants.miniPauseButton, for: .normal) : playButton.setImage(PlayerImageConstants.miniPlayButton, for: .normal)
     }
 
     func didGetData() {
-        imageView.setImage(url: audioPlayer.podcast?.imageURL)
-        descriptionLabel.text = audioPlayer.podcast?.podcastDescription
+        imageView.setImage(url: audioPlayer?.podcast?.imageURL)
+        descriptionLabel.text = audioPlayer?.podcast?.podcastDescription
 
         setControlButtonsEnabledState(isEnabled: true)
     }
@@ -130,7 +134,7 @@ extension MiniPlayerViewController: AudioPlayerDelegate {
 
 extension MiniPlayerViewController: UIGestureRecognizerDelegate {
     @objc func didTapToShowPlayer(_ sender: UITapGestureRecognizer) {
-        guard audioPlayer.player != nil else { return }
+        guard audioPlayer?.player != nil else { return }
         if sender.state == .ended {
             delegate?.presentMainPlayerViewController()
         }

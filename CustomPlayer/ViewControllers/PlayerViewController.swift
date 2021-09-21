@@ -29,11 +29,11 @@ final class PlayerViewController: UIViewController {
     @IBOutlet weak var dislikeCountLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var viewModel: PlayerViewModeling!
-    private var audioService = AudioPlayer.shared
+    var audioService: AudioPlayer?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard audioService.wasPlaying else { return }
+        guard let audioService = audioService, audioService.wasPlaying else { return }
         setupCompletions()
         activityIndicator.stopAnimating()
         imageView.setImage(url: audioService.podcast?.imageURL)
@@ -55,7 +55,7 @@ final class PlayerViewController: UIViewController {
         setupCompletions()
         setupOptionsControlButtons()
         setControlButtonsEnabledState(isEnabled: false)
-        audioService.multicast.addDelegate(self)
+        audioService?.multicast.addDelegate(self)
         viewModel.multicast.addDelegate(self)
         setupImageView()
     }
@@ -66,15 +66,15 @@ final class PlayerViewController: UIViewController {
     }
 
     private func setupCompletions() {
-        audioService.onError = { [weak self] error in
+        audioService?.onError = { [weak self] error in
             self?.showAlert(text: error)
         }
 
-        audioService.isLoading = { [weak self] in
+        audioService?.isLoading = { [weak self] in
             self?.activityIndicator.startAnimating()
         }
 
-        audioService.didLoad = { [weak self] in
+        audioService?.didLoad = { [weak self] in
             self?.activityIndicator.stopAnimating()
             self?.setControlButtonsEnabledState(isEnabled: true)
         }
@@ -111,15 +111,15 @@ final class PlayerViewController: UIViewController {
     }
 
     @objc private func seekTimeForward() {
-        audioService.seekTime(direction: .forward)
+        audioService?.seekTime(direction: .forward)
     }
 
     @objc private func seekTimeBackward() {
-        audioService.seekTime(direction: .backwards)
+        audioService?.seekTime(direction: .backwards)
     }
 
     @IBAction func playPauseButtonAction(_ sender: UIButton) {
-        audioService.didTapPlayButton()
+        audioService?.didTapPlayButton()
     }
 }
 
@@ -128,19 +128,19 @@ extension PlayerViewController {
         guard let touchEvent = event.allTouches?.first else { return }
         switch touchEvent.phase {
         case .began:
-            audioService.pause()
+            audioService?.pause()
         case .moved, .stationary:
             let value = self.playbackSlider.value
-            audioService.setCurrentPlaybackTime(value: value)
+            audioService?.setCurrentPlaybackTime(value: value)
         case .ended:
-            audioService.decideToPlay()
+            audioService?.decideToPlay()
         default:
             break
         }
     }
 
     @objc private func changePlaybackSpeedButtonAction() {
-        audioService.increasePlaybackSpeed()
+        audioService?.increasePlaybackSpeed()
     }
 
     @objc private func downloadPodcastButtonAction() { }
@@ -210,9 +210,9 @@ extension PlayerViewController: AudioPlayerDelegate {
     func didGetData() {
         activityIndicator.stopAnimating()
 
-        if audioService.player != nil {
-        imageView.setImage(url: audioService.podcast?.imageURL)
-        descriptionLabel.text = audioService.podcast?.podcastDescription
+        if audioService?.player != nil {
+        imageView.setImage(url: audioService?.podcast?.imageURL)
+        descriptionLabel.text = audioService?.podcast?.podcastDescription
         setControlButtonsEnabledState(isEnabled: true)
         }
     }
@@ -229,6 +229,7 @@ extension PlayerViewController: AudioPlayerDelegate {
     }
 
     func setPlayButtonState() {
+        guard let audioService = self.audioService else { return }
         audioService.isPlaying ? playPauseButtonView.setBackgroundImage(PlayerImageConstants.pauseButton, for: .normal) : playPauseButtonView.setBackgroundImage(PlayerImageConstants.playButton, for: .normal)
     }
 }
