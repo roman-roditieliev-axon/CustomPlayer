@@ -96,7 +96,9 @@ class PlayerViewModel: PlayerViewModeling {
 
     }
 
-    func didTapAddToFavorites() { }
+    func didTapAddToFavorites() {
+
+    }
 
     func format(duration: TimeInterval, currentTime: TimeInterval) -> (timePlayed: String, timeLeft: String) {
         let time = TimeFormatter.format(duration: duration, currentTime: currentTime)

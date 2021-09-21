@@ -117,11 +117,9 @@
 				CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */,
 				CE64DF5126F1D28000BFB130 /* Assets.xcassets */,
 				CE64DF5E26F1D7BC00BFB130 /* AudioPlayer */,
-				CE64DF7326F1DBC100BFB130 /* CustomClasses */,
 				CEE5FFB926F4A870007A48D2 /* Extensions */,
 				CEE5FFCA26F4AA6F007A48D2 /* ImageConstants */,
 				CE64DF6526F1D8F400BFB130 /* Models */,
-				CE64DF7826F1DF6600BFB130 /* Services */,
 				CEE5FFE526F4B59F007A48D2 /* Storyboards */,
 				CE64DF6426F1D82300BFB130 /* ViewControllers */,
 				CEE5FF6626F49658007A48D2 /* ViewModels */,
@@ -135,6 +133,8 @@
 				CE64DF5F26F1D7FC00BFB130 /* AudioPlayer.swift */,
 				CE64DF8026F1FF2700BFB130 /* PlayerCommandCenter.swift */,
 				CE64DF6926F1D98900BFB130 /* CachingPlayerItem.swift */,
+				CE64DF7326F1DBC100BFB130 /* CustomClasses */,
+				CE64DF7826F1DF6600BFB130 /* Services */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
