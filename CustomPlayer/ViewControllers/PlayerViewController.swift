@@ -67,7 +67,7 @@ final class PlayerViewController: UIViewController {
 
     private func setupCompletions() {
         audioService.onError = { [weak self] error in
-//            self?.showAlert(text: error)
+            self?.showAlert(text: error)
         }
 
         audioService.isLoading = { [weak self] in
@@ -169,7 +169,7 @@ extension PlayerViewController {
 
 extension PlayerViewController: PlayerViewModelMultiDelegate {
     func onError(error: String) {
-//        showAlert(text: error)
+        showAlert(text: error)
     }
 
     func updateLikeButtonStatus(status: LikeStatus, likes: Int, dislikes: Int) {

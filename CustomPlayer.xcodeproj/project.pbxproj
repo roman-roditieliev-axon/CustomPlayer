@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B4469C0E988CC006254FD82F /* Pods_CustomPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8E7DC888BC5B672C9A0715 /* Pods_CustomPlayer.framework */; };
 		CE5A5A3526F8E5CA00F42441 /* MiniPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A5A3426F8E5CA00F42441 /* MiniPlayerViewController.swift */; };
+		CE5A5A3E26F9BAC700F42441 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A5A3D26F9BAC700F42441 /* Alert.swift */; };
 		CE64DF4926F1D27F00BFB130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF4826F1D27F00BFB130 /* AppDelegate.swift */; };
 		CE64DF4B26F1D27F00BFB130 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */; };
 		CE64DF4D26F1D27F00BFB130 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF4C26F1D27F00BFB130 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		3049E59A71FF0A33C9DD23BB /* Pods-CustomPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomPlayer.debug.xcconfig"; path = "Target Support Files/Pods-CustomPlayer/Pods-CustomPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		7B8E7DC888BC5B672C9A0715 /* Pods_CustomPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5A5A3426F8E5CA00F42441 /* MiniPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerViewController.swift; sourceTree = "<group>"; };
+		CE5A5A3D26F9BAC700F42441 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CE64DF4526F1D27F00BFB130 /* CustomPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE64DF4826F1D27F00BFB130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				CEE5FFCF26F4AAD0007A48D2 /* Data.swift */,
 				CEE5FFBA26F4A880007A48D2 /* UIImageView.swift */,
+				CE5A5A3D26F9BAC700F42441 /* Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				CE64DF4D26F1D27F00BFB130 /* ViewController.swift in Sources */,
 				CE64DF6A26F1D98900BFB130 /* CachingPlayerItem.swift in Sources */,
 				CE64DF4926F1D27F00BFB130 /* AppDelegate.swift in Sources */,
+				CE5A5A3E26F9BAC700F42441 /* Alert.swift in Sources */,
 				CEE5FFCC26F4AA84007A48D2 /* ImageConstants.swift in Sources */,
 				CEE5FF6426F49616007A48D2 /* PlaybackSlider.swift in Sources */,
 				CEE5FF6F26F496D3007A48D2 /* ReactionType.swift in Sources */,
