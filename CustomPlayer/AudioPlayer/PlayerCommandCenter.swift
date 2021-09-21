@@ -6,6 +6,7 @@
 //
 
 import MediaPlayer
+import Kingfisher
 
 protocol PlayerCommandCenterType {
     func setupNowPlaying()
@@ -102,24 +103,24 @@ class PlayerCommandCenter: PlayerCommandCenterType {
     /// Set up now playing art image for album/podcast
     func setupNowPlyingArt() {
         guard let imageURL = audioPlayer.podcast?.imageURL else { return }
-        // Get cached image
-//        KingfisherManager.shared.retrieveImage(with: imageURL) { [weak self] result in
-//            guard let self = self else { return }
-//            switch result {
-//            case .success(let result):
-//                self.nowPlayingInfo[MPMediaItemPropertyArtwork] =
-//                    MPMediaItemArtwork(boundsSize: result.image.size) { _ in
-//                        return result.image
-//                    }
-//                self.playingInfoCenter.nowPlayingInfo = self.nowPlayingInfo
-//            case .failure(_):
-//                guard let image = ImageConstants.defaultImage else { return }
-//                self.nowPlayingInfo[MPMediaItemPropertyArtwork] =
-//                    MPMediaItemArtwork(boundsSize: image.size) { _ in
-//                        return image
-//                    }
-//                self.playingInfoCenter.nowPlayingInfo = self.nowPlayingInfo
-//            }
-//        }
+        //Get cached image
+        KingfisherManager.shared.retrieveImage(with: imageURL) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let result):
+                self.nowPlayingInfo[MPMediaItemPropertyArtwork] =
+                    MPMediaItemArtwork(boundsSize: result.image.size) { _ in
+                        return result.image
+                    }
+                self.playingInfoCenter.nowPlayingInfo = self.nowPlayingInfo
+            case .failure(_):
+                guard let image = PlayerImageConstants.defaultImage else { return }
+                self.nowPlayingInfo[MPMediaItemPropertyArtwork] =
+                    MPMediaItemArtwork(boundsSize: image.size) { _ in
+                        return image
+                    }
+                self.playingInfoCenter.nowPlayingInfo = self.nowPlayingInfo
+            }
+        }
     }
 }

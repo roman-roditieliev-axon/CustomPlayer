@@ -17,6 +17,7 @@ enum PlayerImageConstants {
     static let skipForward = UIImage(named: "SkipForward")
     static let timer = UIImage(named: "Timer")
     static let sliderThumb = UIImage(named: "sliderThumb")
+    static let defaultImage = UIImage(named: "Development")
     static let dislikeInactive = UIImage(named: "DislikeInactive")
     static let dislikeActive = UIImage(named: "DislikeActive")
     static let likeActive = UIImage(named: "LikeActive")

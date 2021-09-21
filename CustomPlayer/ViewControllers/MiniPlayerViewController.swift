@@ -17,7 +17,7 @@ final class MiniPlayerViewController: UIViewController {
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named: "Development")
+        view.image = PlayerImageConstants.defaultImage
         view.layer.masksToBounds = true
         view.layer.cornerRadius = 8
         return view
@@ -122,7 +122,7 @@ extension MiniPlayerViewController: AudioPlayerDelegate {
     }
 
     func resetView() {
-        imageView.image = UIImage(named: "Development")
+        imageView.image = PlayerImageConstants.defaultImage
         descriptionLabel.text = ""
         setControlButtonsEnabledState(isEnabled: false)
     }

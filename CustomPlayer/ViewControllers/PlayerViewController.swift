@@ -200,7 +200,7 @@ extension PlayerViewController: PlayerViewModelMultiDelegate {
 
 extension PlayerViewController: AudioPlayerDelegate {
     func resetView() {
-        imageView.image = UIImage(named: "Development")
+        imageView.image = PlayerImageConstants.defaultImage
         timeLeftLabel.text = "--:--"
         timePlayedLabel.text = "--:--"
         descriptionLabel.text = ""

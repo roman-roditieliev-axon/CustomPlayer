@@ -11,11 +11,12 @@ protocol MiniPlayerViewControllerDelegate: AnyObject {
     func presentMainPlayerViewController()
 }
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var audioUrlTextField: UITextField!
     @IBOutlet weak var playLocaleAudioButton: UIButton!
 
+    // MARK: - create mini player
     lazy var miniPlayerVC: MiniPlayerViewController = {
         let view = MiniPlayerViewController()
         view.viewModel = viewModel
@@ -32,19 +33,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     var viewModel: PlayerViewModeling!
 
+    // MARK: - Configure mini player
     override func viewDidLoad() {
         super.viewDidLoad()
         AudioPlayer.shared.miniPlayerDelegate = self
-        audioUrlTextField.delegate = self
-    }
-
-    private func openPlayer(with model: Podcast) {
-        let viewModel = PlayerViewModel()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController: PlayerViewController = storyboard.instantiateViewController(identifier: "PlayerViewController")
-        viewController.viewModel = viewModel
-        self.present(viewController, animated: true, completion: nil)
-        AudioPlayer.shared.playPodcast(with: model, completion: nil)
     }
 
     private func configureView() {
@@ -68,20 +60,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         ])
     }
 
+    // MARK: - Play action
     @IBAction func playLocaleAudioAction(_ sender: Any) {
-        //https://s3.amazonaws.com/kargopolov/kukushka.mp3
-        //https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3
+        let stringUrl = self.audioUrlTextField.text ?? ""
+        let url = URL(string: stringUrl)
 
-        let stringUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
-        let url = URL(string: stringUrl)!
-        let name = stringUrl.split(separator: "/").last!
+        if !stringUrl.isEmpty {
+            let name = stringUrl.split(separator: "/").last ?? "Test Name"
 
-        let podcast = Podcast(title: String(name), duration: TimeInterval(27), likeCount: 2, url: url, podcastID: String(name), createAt: "2021-07-21T06:48:29.942024", status: "", reactionType: .liked)
-        openPlayer(with: podcast)
+            let podcast = Podcast(title: String(name), duration: TimeInterval(240), likeCount: 2, dislikeCount: 1, audioUrl: url, imageUrl: nil, podcastID: String(name), categoryID: "", createdAt: "2021-07-21T06:48:29.942024", publishedAt: "2021-07-21T06:48:29.942024", status: "", reactionType: .liked)
+            openPlayer(with: podcast)
+        }
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-
+    // MARK: - Open player
+    private func openPlayer(with model: Podcast) {
+        presentMainPlayer()
+        AudioPlayer.shared.playPodcast(with: model, completion: nil)
     }
 
     private func presentMainPlayer() {
@@ -93,6 +88,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
+// MARK: - Player delegates
 extension ViewController: MiniPlayerPresenterDelegate {
     func presentMiniPlayer() {
         self.configureView()

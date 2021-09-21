@@ -11,7 +11,7 @@ import UIKit
 extension UIImageView {
     func setImage(url: URL?, animated: Bool = true) {
         guard let url = url else {
-            self.image = UIImage(named: "Development")
+            self.image = PlayerImageConstants.defaultImage
             return
         }
         kf.setImage(with: url, options: animated ? [.transition(.fade(0.9))] : []) { [weak self] result in
@@ -20,7 +20,7 @@ extension UIImageView {
                 case .success(let result):
                     self?.image = result.image
                 case .failure(_):
-                    self?.image = UIImage(named: "Development")
+                    self?.image = PlayerImageConstants.defaultImage
                 }
             }
         }

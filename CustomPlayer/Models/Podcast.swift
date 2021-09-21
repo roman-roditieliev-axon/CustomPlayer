@@ -48,18 +48,19 @@ class Podcast: Codable {
         case status
     }
 
-    init(title: String, duration: TimeInterval, likeCount: Int, url: URL?, podcastID: String, createAt: String, status: String, reactionType: LikeStatus) {
+    init(title: String, duration: TimeInterval, likeCount: Int, dislikeCount: Int, audioUrl: URL?, imageUrl: URL?, podcastID: String, categoryID: String, createdAt: String, publishedAt: String, status: String, reactionType: LikeStatus) {
         self.title = title
         self.podcastDescription = title
         self.duration = duration
         self.likeCount = likeCount
-        self.dislikeCount = likeCount
+        self.dislikeCount = dislikeCount
         self.podcastID = podcastID
-        self.categoryID = podcastID
-        self.createdAt = createAt
+        self.categoryID = categoryID
+        self.createdAt = createdAt
         self.status = status
-        self.audioURL = url
-        self.publishedAt = createAt
+        self.audioURL = audioUrl
+        self.imageURL = imageUrl
+        self.publishedAt = publishedAt
         self.reactionType = reactionType
     }
 

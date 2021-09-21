@@ -16,35 +16,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Play audio frome url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRN-A0-cmX">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Audio url or filepath" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRN-A0-cmX">
                                 <rect key="frame" x="20" y="209.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teu-gN-4mA">
-                                <rect key="frame" x="151" y="344.5" width="112" height="30"/>
-                                <state key="normal" title="Play Local Audio"/>
+                                <rect key="frame" x="171" y="293.5" width="72" height="30"/>
+                                <state key="normal" title="Play Audio"/>
                                 <connections>
                                     <action selector="playLocaleAudioAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0e-ee-tcn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvh-rF-ac5">
-                                <rect key="frame" x="199" y="283.5" width="16" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lRz-8y-nYd">
+                                <rect key="frame" x="20" y="383.5" width="374" height="210"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="fTx-rd-kvs"/>
+                                </constraints>
+                                <string key="text">url for testing
+
+https://s3.amazonaws.com/kargopolov/kukushka.mp3
+
+https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3
+
+https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3
+
+https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="teu-gN-4mA" firstAttribute="top" secondItem="nvh-rF-ac5" secondAttribute="bottom" constant="40" id="1Zc-g7-7yK"/>
-                            <constraint firstItem="nvh-rF-ac5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4ZA-QS-2VL"/>
                             <constraint firstItem="gRN-A0-cmX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EDw-mg-IJe"/>
+                            <constraint firstItem="lRz-8y-nYd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TM2-bP-l1D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lRz-8y-nYd" secondAttribute="trailing" constant="20" id="Ujz-s8-6te"/>
                             <constraint firstItem="teu-gN-4mA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Y7a-ts-Ara"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gRN-A0-cmX" secondAttribute="trailing" constant="20" id="dIJ-b1-tt5"/>
                             <constraint firstItem="gRN-A0-cmX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.5" id="fro-JG-Xd1"/>
-                            <constraint firstItem="nvh-rF-ac5" firstAttribute="top" secondItem="gRN-A0-cmX" secondAttribute="bottom" constant="40" id="hoK-vK-5lY"/>
+                            <constraint firstItem="teu-gN-4mA" firstAttribute="top" secondItem="gRN-A0-cmX" secondAttribute="bottom" constant="50" id="sWV-GZ-brF"/>
+                            <constraint firstItem="lRz-8y-nYd" firstAttribute="top" secondItem="teu-gN-4mA" secondAttribute="bottom" constant="60" id="um9-GV-wP7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -294,6 +308,9 @@
         <image name="SkipBackwards" width="35" height="40"/>
         <image name="SkipForward" width="35" height="39"/>
         <image name="Timer" width="22" height="22"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
