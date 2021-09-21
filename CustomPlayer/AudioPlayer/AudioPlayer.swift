@@ -28,7 +28,7 @@ protocol AudioPlayerDelegate: AnyObject {
     func resetView()
 }
 
-final class AudioPlayer {
+ class AudioPlayer {
     var onError: (String) -> Void = { _ in }
     var isLoading = { }
     var didLoad = { }
@@ -41,11 +41,8 @@ final class AudioPlayer {
     weak var miniPlayerDelegate: MiniPlayerPresenterDelegate?
     private let seekDuration: Double = 15
     private var displayLink: CADisplayLink?
-//    private let podcastRepo = PodcastRepository()
-    private let network = NetworkManager.sharedInstance
     private var commandCenter: PlayerCommandCenterType?
     private let storageRepository = FileRepository.shared
-    static let shared = AudioPlayer()
 
     var duration: Float = 0.0
 
@@ -105,7 +102,6 @@ final class AudioPlayer {
         let inSeconds = CMTimeGetSeconds(duration)
         self.duration = Float(inSeconds)
         NotificationCenter.default.addObserver(self, selector: #selector(didFinishPlaying(_ :)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
-        network.networkMulticast.addDelegate(self)
         miniPlayerDelegate?.presentMiniPlayer()
         didLoad()
         delegate?.updateUIInfo()
@@ -115,31 +111,20 @@ final class AudioPlayer {
     }
 
     private func playFromRemoteAndCache(podcast: Podcast) {
-//        podcastRepo.getSinglePodcast(by: podcast.podcastID) { [weak self] result in
-//            switch result {
-//            case .success(let model):
-//                self?.podcast = model
-//                guard let self = self,
-//                      let url = model.audioURL else { return }
-//                self.podcast?.audioURL = model.audioURL
-//                self.playerItem = CachingPlayerItem(url: url, customFileExtension: "mp3")
-//                self.playerItem.delegate = self
-//                self.player = AVPlayer(playerItem: self.playerItem)
-//                self.player.automaticallyWaitsToMinimizeStalling = false
-//                NotificationCenter.default.addObserver(self, selector: #selector(self.didFinishPlaying(_ :)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.playerItem)
-//                self.network.networkMulticast.addDelegate(self)
-//                self.miniPlayerDelegate?.presentMiniPlayer()
-//                self.duration = Float(self.podcast?.duration ?? 0)
-//                self.didLoad()
-//                self.delegate?.updateUIInfo()
-//                self.commandCenter = PlayerCommandCenter.init(player: self.player, playerItem: self.playerItem)
-//                self.multicast.invokeDelegates({ delegate in delegate.didGetData() })
-//                self.updatePlaybackInfo()
-//                self.startPlaying()
-//            case .failure(let error):
-//                self?.onError(error.localizedDescription)
-//            }
-//        }
+        self.playerItem = CachingPlayerItem(url: (podcast.audioURL)!, customFileExtension: "mp3")
+        self.podcast?.audioURL = podcast.audioURL
+        self.playerItem.delegate = self
+        self.player = AVPlayer(playerItem: self.playerItem)
+        self.player.automaticallyWaitsToMinimizeStalling = false
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didFinishPlaying(_ :)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.playerItem)
+        self.miniPlayerDelegate?.presentMiniPlayer()
+        self.duration = Float(self.podcast?.duration ?? 0)
+        self.didLoad()
+        self.delegate?.updateUIInfo()
+        self.commandCenter = PlayerCommandCenter.init(player: self.player, playerItem: self.playerItem)
+        self.multicast.invokeDelegates({ delegate in delegate.didGetData() })
+        self.updatePlaybackInfo()
+        self.startPlaying()
     }
 
     /// Update playback info using timer
@@ -287,16 +272,6 @@ extension AudioPlayer {
         duration = currentTime
         isPlaying = false
         setTimerPausedState(isPaused: true)
-    }
-}
-
-extension AudioPlayer: NetworkDelegate {
-    func onNetworkOffline() {
-        isOnline = false
-    }
-
-    func onNetworkOnline() {
-        isOnline = true
     }
 }
 

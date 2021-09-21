@@ -208,7 +208,6 @@ open class CachingPlayerItem: AVPlayerItem {
 
     /// Is used for playing from Data.
     init(data: Data, mimeType: String, fileExtension: String) {
-
         guard let fakeUrl = URL(string: cachingPlayerItemScheme + "://whatever/file.\(fileExtension)") else {
             fatalError("internal inconsistency")
         }
@@ -231,13 +230,10 @@ open class CachingPlayerItem: AVPlayerItem {
 
     }
 
-    //swiftlint:disable block_based_kvo
-    //    // MARK: - KVO
+    // MARK: - KVO
         open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
-            #warning("https://axondevgroup.atlassian.net/browse/APDC-289")
             delegate?.playerItemReadyToPlay?(self)
         }
-    //swiftlint:enable block_based_kvo
 
     // MARK: Notification handlers
     @objc func playbackStalledHandler() {

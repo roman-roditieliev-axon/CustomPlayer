@@ -1,16 +1,28 @@
 PODS:
+  - EFAutoScrollLabel (5.1.2)
+  - FittedSheets (2.4.2)
+  - Kingfisher (6.3.1)
   - ReachabilitySwift (5.0.0)
 
 DEPENDENCIES:
+  - EFAutoScrollLabel
+  - FittedSheets
+  - Kingfisher
   - ReachabilitySwift
 
 SPEC REPOS:
   trunk:
+    - EFAutoScrollLabel
+    - FittedSheets
+    - Kingfisher
     - ReachabilitySwift
 
 SPEC CHECKSUMS:
+  EFAutoScrollLabel: 8b7362d676c4d5b126d15c00ae01c6659452fa57
+  FittedSheets: 661408776eb4ff514a31da75b3600bd7222b2b3d
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: c5f75cdee169d228b245ff0c035912d46c0a1445
+PODFILE CHECKSUM: 0d16bf0aa5250f18e53a2fbf10ad901462193a97
 
 COCOAPODS: 1.10.1

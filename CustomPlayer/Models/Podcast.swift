@@ -25,14 +25,14 @@ enum LikeStatus: String, Codable {
 
 // MARK: - Podcast
 class Podcast: Codable {
-    let title, podcastDescription: String
-    let duration: TimeInterval
+    var title, podcastDescription: String
+    var duration: TimeInterval
     var likeCount, dislikeCount: Int
-    let imageURL: URL?
+    var imageURL: URL?
     var audioURL: URL?
-    let podcastID, categoryID: String
-    let createdAt, status: String
-    let publishedAt: String?
+    var podcastID, categoryID: String
+    var createdAt, status: String
+    var publishedAt: String?
     var reactionType: LikeStatus
 
     enum CodingKeys: String, CodingKey {
@@ -46,6 +46,22 @@ class Podcast: Codable {
         case createdAt, publishedAt, likeCount, dislikeCount
         case reactionType
         case status
+    }
+
+    init(title: String, duration: TimeInterval, likeCount: Int, dislikeCount: Int, audioUrl: URL?, imageUrl: URL?, podcastID: String, categoryID: String, createdAt: String, publishedAt: String, status: String, reactionType: LikeStatus) {
+        self.title = title
+        self.podcastDescription = title
+        self.duration = duration
+        self.likeCount = likeCount
+        self.dislikeCount = dislikeCount
+        self.podcastID = podcastID
+        self.categoryID = categoryID
+        self.createdAt = createdAt
+        self.status = status
+        self.audioURL = audioUrl
+        self.imageURL = imageUrl
+        self.publishedAt = publishedAt
+        self.reactionType = reactionType
     }
 
     required init(from decoder: Decoder) throws {

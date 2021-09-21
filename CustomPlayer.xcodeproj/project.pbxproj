@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B4469C0E988CC006254FD82F /* Pods_CustomPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8E7DC888BC5B672C9A0715 /* Pods_CustomPlayer.framework */; };
+		CE5A5A3526F8E5CA00F42441 /* MiniPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A5A3426F8E5CA00F42441 /* MiniPlayerViewController.swift */; };
+		CE5A5A3E26F9BAC700F42441 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A5A3D26F9BAC700F42441 /* Alert.swift */; };
 		CE64DF4926F1D27F00BFB130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF4826F1D27F00BFB130 /* AppDelegate.swift */; };
 		CE64DF4B26F1D27F00BFB130 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */; };
 		CE64DF4D26F1D27F00BFB130 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF4C26F1D27F00BFB130 /* ViewController.swift */; };
@@ -17,17 +19,29 @@
 		CE64DF6026F1D7FC00BFB130 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF5F26F1D7FC00BFB130 /* AudioPlayer.swift */; };
 		CE64DF6726F1D90A00BFB130 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF6626F1D90A00BFB130 /* Podcast.swift */; };
 		CE64DF6A26F1D98900BFB130 /* CachingPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF6926F1D98900BFB130 /* CachingPlayerItem.swift */; };
-		CE64DF6D26F1DA4800BFB130 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF6C26F1DA4800BFB130 /* NetworkManager.swift */; };
 		CE64DF7526F1DBE000BFB130 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF7426F1DBE000BFB130 /* MulticastDelegate.swift */; };
-		CE64DF7A26F1DF7E00BFB130 /* PodcastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF7926F1DF7E00BFB130 /* PodcastRepository.swift */; };
 		CE64DF7E26F1FC1500BFB130 /* FileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF7D26F1FC1500BFB130 /* FileRepository.swift */; };
 		CE64DF8126F1FF2700BFB130 /* PlayerCommandCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF8026F1FF2700BFB130 /* PlayerCommandCenter.swift */; };
+		CEE5FF6126F495D1007A48D2 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6026F495D1007A48D2 /* PlayerViewController.swift */; };
+		CEE5FF6426F49616007A48D2 /* PlaybackSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6326F49616007A48D2 /* PlaybackSlider.swift */; };
+		CEE5FF6826F4966B007A48D2 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6726F4966B007A48D2 /* PlayerViewModel.swift */; };
+		CEE5FF6C26F4969D007A48D2 /* TimeFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6B26F4969D007A48D2 /* TimeFormatted.swift */; };
+		CEE5FF6F26F496D3007A48D2 /* ReactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FF6E26F496D3007A48D2 /* ReactionType.swift */; };
+		CEE5FFBB26F4A880007A48D2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFBA26F4A880007A48D2 /* UIImageView.swift */; };
+		CEE5FFCC26F4AA84007A48D2 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFCB26F4AA84007A48D2 /* ImageConstants.swift */; };
+		CEE5FFD026F4AAD0007A48D2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFCF26F4AAD0007A48D2 /* Data.swift */; };
+		CEE5FFD326F4ADA4007A48D2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFD226F4ADA4007A48D2 /* TimerViewController.swift */; };
+		CEE5FFDB26F4B2D3007A48D2 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFDA26F4B2D3007A48D2 /* Scheduler.swift */; };
+		CEE5FFDF26F4B487007A48D2 /* SlideUpTimerMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFDE26F4B487007A48D2 /* SlideUpTimerMenuCell.swift */; };
+		CEE5FFE226F4B4A9007A48D2 /* SlideUpTimerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE5FFE126F4B4A9007A48D2 /* SlideUpTimerOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1619BF6478EDAB7A93DAE930 /* Pods-CustomPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomPlayer.release.xcconfig"; path = "Target Support Files/Pods-CustomPlayer/Pods-CustomPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		3049E59A71FF0A33C9DD23BB /* Pods-CustomPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomPlayer.debug.xcconfig"; path = "Target Support Files/Pods-CustomPlayer/Pods-CustomPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		7B8E7DC888BC5B672C9A0715 /* Pods_CustomPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5A5A3426F8E5CA00F42441 /* MiniPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerViewController.swift; sourceTree = "<group>"; };
+		CE5A5A3D26F9BAC700F42441 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CE64DF4526F1D27F00BFB130 /* CustomPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE64DF4826F1D27F00BFB130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,11 +53,21 @@
 		CE64DF5F26F1D7FC00BFB130 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		CE64DF6626F1D90A00BFB130 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		CE64DF6926F1D98900BFB130 /* CachingPlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingPlayerItem.swift; sourceTree = "<group>"; };
-		CE64DF6C26F1DA4800BFB130 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CE64DF7426F1DBE000BFB130 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
-		CE64DF7926F1DF7E00BFB130 /* PodcastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastRepository.swift; sourceTree = "<group>"; };
 		CE64DF7D26F1FC1500BFB130 /* FileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRepository.swift; sourceTree = "<group>"; };
 		CE64DF8026F1FF2700BFB130 /* PlayerCommandCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCommandCenter.swift; sourceTree = "<group>"; };
+		CEE5FF6026F495D1007A48D2 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		CEE5FF6326F49616007A48D2 /* PlaybackSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSlider.swift; sourceTree = "<group>"; };
+		CEE5FF6726F4966B007A48D2 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		CEE5FF6B26F4969D007A48D2 /* TimeFormatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatted.swift; sourceTree = "<group>"; };
+		CEE5FF6E26F496D3007A48D2 /* ReactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionType.swift; sourceTree = "<group>"; };
+		CEE5FFBA26F4A880007A48D2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		CEE5FFCB26F4AA84007A48D2 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
+		CEE5FFCF26F4AAD0007A48D2 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		CEE5FFD226F4ADA4007A48D2 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		CEE5FFDA26F4B2D3007A48D2 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		CEE5FFDE26F4B487007A48D2 /* SlideUpTimerMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpTimerMenuCell.swift; sourceTree = "<group>"; };
+		CEE5FFE126F4B4A9007A48D2 /* SlideUpTimerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpTimerOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,18 +112,17 @@
 		CE64DF4726F1D27F00BFB130 /* CustomPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				CE64DF5626F1D28000BFB130 /* Info.plist */,
 				CE64DF4826F1D27F00BFB130 /* AppDelegate.swift */,
 				CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */,
-				CE64DF7826F1DF6600BFB130 /* Services */,
-				CE64DF7326F1DBC100BFB130 /* CustomClasses */,
-				CE64DF6526F1D8F400BFB130 /* Models */,
-				CE64DF5E26F1D7BC00BFB130 /* AudioPlayer */,
-				CE64DF6426F1D82300BFB130 /* ViewControllers */,
-				CE64DF6326F1D81100BFB130 /* NetworkManager */,
-				CE64DF4E26F1D27F00BFB130 /* Main.storyboard */,
 				CE64DF5126F1D28000BFB130 /* Assets.xcassets */,
-				CE64DF5326F1D28000BFB130 /* LaunchScreen.storyboard */,
-				CE64DF5626F1D28000BFB130 /* Info.plist */,
+				CE64DF5E26F1D7BC00BFB130 /* AudioPlayer */,
+				CEE5FFB926F4A870007A48D2 /* Extensions */,
+				CEE5FFCA26F4AA6F007A48D2 /* ImageConstants */,
+				CE64DF6526F1D8F400BFB130 /* Models */,
+				CEE5FFE526F4B59F007A48D2 /* Storyboards */,
+				CE64DF6426F1D82300BFB130 /* ViewControllers */,
+				CEE5FF6626F49658007A48D2 /* ViewModels */,
 			);
 			path = CustomPlayer;
 			sourceTree = "<group>";
@@ -110,22 +133,20 @@
 				CE64DF5F26F1D7FC00BFB130 /* AudioPlayer.swift */,
 				CE64DF8026F1FF2700BFB130 /* PlayerCommandCenter.swift */,
 				CE64DF6926F1D98900BFB130 /* CachingPlayerItem.swift */,
+				CE64DF7326F1DBC100BFB130 /* CustomClasses */,
+				CE64DF7826F1DF6600BFB130 /* Services */,
 			);
 			path = AudioPlayer;
-			sourceTree = "<group>";
-		};
-		CE64DF6326F1D81100BFB130 /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-				CE64DF6C26F1DA4800BFB130 /* NetworkManager.swift */,
-			);
-			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		CE64DF6426F1D82300BFB130 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEE5FF6026F495D1007A48D2 /* PlayerViewController.swift */,
+				CEE5FFD226F4ADA4007A48D2 /* TimerViewController.swift */,
 				CE64DF4C26F1D27F00BFB130 /* ViewController.swift */,
+				CE5A5A3426F8E5CA00F42441 /* MiniPlayerViewController.swift */,
+				CEE5FFDD26F4B487007A48D2 /* SlideUpTimerMenuCell */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -134,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				CE64DF6626F1D90A00BFB130 /* Podcast.swift */,
+				CEE5FF6E26F496D3007A48D2 /* ReactionType.swift */,
+				CEE5FFE126F4B4A9007A48D2 /* SlideUpTimerOptions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				CE64DF7426F1DBE000BFB130 /* MulticastDelegate.swift */,
+				CEE5FF6326F49616007A48D2 /* PlaybackSlider.swift */,
+				CEE5FFDA26F4B2D3007A48D2 /* Scheduler.swift */,
+				CEE5FF6B26F4969D007A48D2 /* TimeFormatted.swift */,
 			);
 			path = CustomClasses;
 			sourceTree = "<group>";
@@ -149,10 +175,52 @@
 		CE64DF7826F1DF6600BFB130 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CE64DF7926F1DF7E00BFB130 /* PodcastRepository.swift */,
 				CE64DF7D26F1FC1500BFB130 /* FileRepository.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CEE5FF6626F49658007A48D2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FF6726F4966B007A48D2 /* PlayerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CEE5FFB926F4A870007A48D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FFCF26F4AAD0007A48D2 /* Data.swift */,
+				CEE5FFBA26F4A880007A48D2 /* UIImageView.swift */,
+				CE5A5A3D26F9BAC700F42441 /* Alert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEE5FFCA26F4AA6F007A48D2 /* ImageConstants */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FFCB26F4AA84007A48D2 /* ImageConstants.swift */,
+			);
+			path = ImageConstants;
+			sourceTree = "<group>";
+		};
+		CEE5FFDD26F4B487007A48D2 /* SlideUpTimerMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				CEE5FFDE26F4B487007A48D2 /* SlideUpTimerMenuCell.swift */,
+			);
+			path = SlideUpTimerMenuCell;
+			sourceTree = "<group>";
+		};
+		CEE5FFE526F4B59F007A48D2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE64DF5326F1D28000BFB130 /* LaunchScreen.storyboard */,
+				CE64DF4E26F1D27F00BFB130 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		E28E556AC7925E6CC10A3BA8 /* Frameworks */ = {
@@ -280,13 +348,25 @@
 				CE64DF4D26F1D27F00BFB130 /* ViewController.swift in Sources */,
 				CE64DF6A26F1D98900BFB130 /* CachingPlayerItem.swift in Sources */,
 				CE64DF4926F1D27F00BFB130 /* AppDelegate.swift in Sources */,
+				CE5A5A3E26F9BAC700F42441 /* Alert.swift in Sources */,
+				CEE5FFCC26F4AA84007A48D2 /* ImageConstants.swift in Sources */,
+				CEE5FF6426F49616007A48D2 /* PlaybackSlider.swift in Sources */,
+				CEE5FF6F26F496D3007A48D2 /* ReactionType.swift in Sources */,
+				CEE5FFE226F4B4A9007A48D2 /* SlideUpTimerOptions.swift in Sources */,
+				CEE5FFDB26F4B2D3007A48D2 /* Scheduler.swift in Sources */,
+				CEE5FFBB26F4A880007A48D2 /* UIImageView.swift in Sources */,
 				CE64DF7526F1DBE000BFB130 /* MulticastDelegate.swift in Sources */,
-				CE64DF6D26F1DA4800BFB130 /* NetworkManager.swift in Sources */,
-				CE64DF7A26F1DF7E00BFB130 /* PodcastRepository.swift in Sources */,
+				CEE5FFD326F4ADA4007A48D2 /* TimerViewController.swift in Sources */,
+				CEE5FF6826F4966B007A48D2 /* PlayerViewModel.swift in Sources */,
+				CE5A5A3526F8E5CA00F42441 /* MiniPlayerViewController.swift in Sources */,
+				CEE5FFDF26F4B487007A48D2 /* SlideUpTimerMenuCell.swift in Sources */,
+				CEE5FF6126F495D1007A48D2 /* PlayerViewController.swift in Sources */,
+				CEE5FFD026F4AAD0007A48D2 /* Data.swift in Sources */,
 				CE64DF4B26F1D27F00BFB130 /* SceneDelegate.swift in Sources */,
 				CE64DF6026F1D7FC00BFB130 /* AudioPlayer.swift in Sources */,
 				CE64DF6726F1D90A00BFB130 /* Podcast.swift in Sources */,
 				CE64DF7E26F1FC1500BFB130 /* FileRepository.swift in Sources */,
+				CEE5FF6C26F4969D007A48D2 /* TimeFormatted.swift in Sources */,
 				CE64DF8126F1FF2700BFB130 /* PlayerCommandCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
