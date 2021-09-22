@@ -43,6 +43,7 @@ protocol AudioPlayerDelegate: AnyObject {
     private var displayLink: CADisplayLink?
     private var commandCenter: PlayerCommandCenterType?
     private let storageRepository = FileRepository.shared
+    // Updated: remove singelton
 
     var duration: Float = 0.0
 
@@ -283,9 +284,9 @@ extension AudioPlayer: CachingPlayerItemDelegate {
         storageRepository.saveFile(data: data, name: podcast) { result in
             switch result {
             case .success:
-                print("Saved locally with path \(podcast).mp3")
+                print("Saved locally with path \(podcast)")
             case .failure:
-                print("Fail to save with path \(podcast).mp3")
+                print("Fail to save with path \(podcast)")
             }
         }
     }

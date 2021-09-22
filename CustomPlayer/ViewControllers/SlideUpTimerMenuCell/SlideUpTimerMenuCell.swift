@@ -8,11 +8,9 @@
 import UIKit
 
 class SlideUpTimerMenuCell: UITableViewCell {
-    
-    static let identifier = "SlideUpTimerMenuCell"
-    
-    static func nib() -> UINib { UINib(nibName: identifier, bundle: nil) }
-    
+
+    // Updated: Remove static
+
     lazy var labelView: UILabel = {
         let view = UILabel(frame: CGRect(x: 0,
                                          y: 0,

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,23 +12,23 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="CustomPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Audio url or filepath" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gRN-A0-cmX">
-                                <rect key="frame" x="20" y="209.5" width="374" height="34"/>
+                                <rect key="frame" x="20" y="133" width="560" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teu-gN-4mA">
-                                <rect key="frame" x="171" y="293.5" width="72" height="30"/>
+                                <rect key="frame" x="264" y="217" width="72" height="30"/>
                                 <state key="normal" title="Play Audio"/>
                                 <connections>
-                                    <action selector="playLocaleAudioAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0e-ee-tcn"/>
+                                    <action selector="playAudioAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0e-ee-tcn"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lRz-8y-nYd">
-                                <rect key="frame" x="20" y="383.5" width="374" height="210"/>
+                                <rect key="frame" x="20" y="307" width="560" height="210"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="210" id="fTx-rd-kvs"/>
@@ -75,20 +74,20 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</string>
             <objects>
                 <viewController storyboardIdentifier="PlayerViewController" id="Ifd-yU-PbR" customClass="PlayerViewController" customModule="CustomPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v67-WE-6mx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="LNa-k0-SgN">
-                                <rect key="frame" x="0.0" y="68" width="414" height="607"/>
+                                <rect key="frame" x="0.0" y="24" width="600" height="793"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DataSecurity" translatesAutoresizingMaskIntoConstraints="NO" id="ct6-rX-RVv">
-                                        <rect key="frame" x="49" y="0.0" width="316" height="316"/>
+                                        <rect key="frame" x="49" y="0.0" width="502" height="502"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ct6-rX-RVv" secondAttribute="height" multiplier="1:1" id="Rjf-Sw-kyu"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="pYD-B8-TBi">
-                                        <rect key="frame" x="68.5" y="327" width="277" height="84"/>
+                                        <rect key="frame" x="161.5" y="513" width="277" height="84"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choosing a technology stack for web application" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unR-K4-4ZG">
                                                 <rect key="frame" x="0.0" y="0.0" width="277" height="43"/>
@@ -151,19 +150,19 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VXR-wg-yiA" userLabel="Slider">
-                                        <rect key="frame" x="16" y="422" width="382" height="40"/>
+                                        <rect key="frame" x="16" y="608" width="568" height="40"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Keq-4L-GD8" customClass="PlaybackSlider" customModule="CustomPlayer" customModuleProvider="target">
-                                                <rect key="frame" x="-2" y="0.0" width="386" height="25"/>
+                                                <rect key="frame" x="-2" y="0.0" width="572" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="th2-W9-840"/>
                                                 </constraints>
                                             </slider>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYL-77-qop">
-                                                <rect key="frame" x="0.0" y="24" width="382" height="16"/>
+                                                <rect key="frame" x="0.0" y="24" width="568" height="16"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN7-nO-Ypo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="191" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="284" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="2k7-F2-pTB"/>
                                                         </constraints>
@@ -172,7 +171,7 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9j-5T-BkH">
-                                                        <rect key="frame" x="191" y="0.0" width="191" height="16"/>
+                                                        <rect key="frame" x="284" y="0.0" width="284" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="16" id="k6j-zR-kUd"/>
                                                         </constraints>
@@ -185,7 +184,7 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="tVh-Nv-gpD" userLabel="Player controll buttons">
-                                        <rect key="frame" x="86.5" y="473" width="241" height="73"/>
+                                        <rect key="frame" x="179.5" y="659" width="241" height="73"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPC-XR-Ydb">
                                                 <rect key="frame" x="0.0" y="0.0" width="73" height="73"/>
@@ -216,27 +215,27 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="io3-nF-pWm" userLabel="Controll Buttons row">
-                                        <rect key="frame" x="0.0" y="557" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="743" width="600" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqC-5r-jse">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="1.0x"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF4-n0-znj">
-                                                <rect key="frame" x="83" y="0.0" width="82.5" height="50"/>
+                                                <rect key="frame" x="120" y="0.0" width="120" height="50"/>
                                                 <state key="normal" image="Dowload"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGJ-7o-tNY">
-                                                <rect key="frame" x="165.5" y="0.0" width="83" height="50"/>
+                                                <rect key="frame" x="240" y="0.0" width="120" height="50"/>
                                                 <state key="normal" image="AirPlay"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJd-J3-Ubw">
-                                                <rect key="frame" x="248.5" y="0.0" width="82.5" height="50"/>
+                                                <rect key="frame" x="360" y="0.0" width="120" height="50"/>
                                                 <state key="normal" image="Favorites"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc4-GN-tcg">
-                                                <rect key="frame" x="331" y="0.0" width="83" height="50"/>
+                                                <rect key="frame" x="480" y="0.0" width="120" height="50"/>
                                                 <state key="normal" image="Timer"/>
                                             </button>
                                         </subviews>
@@ -255,7 +254,7 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</string>
                                 </constraints>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qhB-hf-r8u">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <rect key="frame" x="281.5" y="281.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cEE-Ri-TMx"/>

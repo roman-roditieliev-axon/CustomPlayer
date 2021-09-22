@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var audioUrlTextField: UITextField!
     @IBOutlet weak var playLocaleAudioButton: UIButton!
 
+    var viewModel: PlayerViewModeling!
     private let player = AudioPlayer()
 
     // MARK: - create mini player
@@ -33,8 +34,6 @@ class ViewController: UIViewController {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         return containerView
     }()
-
-    var viewModel: PlayerViewModeling!
 
     // MARK: - Configure mini player
     override func viewDidLoad() {
@@ -64,7 +63,7 @@ class ViewController: UIViewController {
     }
 
     // MARK: - Play action
-    @IBAction func playLocaleAudioAction(_ sender: Any) {
+    @IBAction func playAudioAction(_ sender: Any) {
         let stringUrl = self.audioUrlTextField.text ?? ""
         let url = URL(string: stringUrl)
 

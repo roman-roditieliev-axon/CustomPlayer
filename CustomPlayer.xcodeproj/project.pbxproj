@@ -10,6 +10,8 @@
 		B4469C0E988CC006254FD82F /* Pods_CustomPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8E7DC888BC5B672C9A0715 /* Pods_CustomPlayer.framework */; };
 		CE5A5A3526F8E5CA00F42441 /* MiniPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A5A3426F8E5CA00F42441 /* MiniPlayerViewController.swift */; };
 		CE5A5A3E26F9BAC700F42441 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A5A3D26F9BAC700F42441 /* Alert.swift */; };
+		CE5A5A4B26FAF30600F42441 /* ResourceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A5A4A26FAF30600F42441 /* ResourceLoader.swift */; };
+		CE5A5A4E26FAF4D700F42441 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5A5A4D26FAF4D700F42441 /* URL.swift */; };
 		CE64DF4926F1D27F00BFB130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF4826F1D27F00BFB130 /* AppDelegate.swift */; };
 		CE64DF4B26F1D27F00BFB130 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */; };
 		CE64DF4D26F1D27F00BFB130 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DF4C26F1D27F00BFB130 /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 		7B8E7DC888BC5B672C9A0715 /* Pods_CustomPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5A5A3426F8E5CA00F42441 /* MiniPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerViewController.swift; sourceTree = "<group>"; };
 		CE5A5A3D26F9BAC700F42441 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		CE5A5A4A26FAF30600F42441 /* ResourceLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoader.swift; sourceTree = "<group>"; };
+		CE5A5A4D26FAF4D700F42441 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CE64DF4526F1D27F00BFB130 /* CustomPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE64DF4826F1D27F00BFB130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE64DF4A26F1D27F00BFB130 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				CE64DF7D26F1FC1500BFB130 /* FileRepository.swift */,
+				CE5A5A4A26FAF30600F42441 /* ResourceLoader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				CEE5FFCF26F4AAD0007A48D2 /* Data.swift */,
 				CEE5FFBA26F4A880007A48D2 /* UIImageView.swift */,
 				CE5A5A3D26F9BAC700F42441 /* Alert.swift */,
+				CE5A5A4D26FAF4D700F42441 /* URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +365,8 @@
 				CEE5FFD326F4ADA4007A48D2 /* TimerViewController.swift in Sources */,
 				CEE5FF6826F4966B007A48D2 /* PlayerViewModel.swift in Sources */,
 				CE5A5A3526F8E5CA00F42441 /* MiniPlayerViewController.swift in Sources */,
+				CE5A5A4B26FAF30600F42441 /* ResourceLoader.swift in Sources */,
+				CE5A5A4E26FAF4D700F42441 /* URL.swift in Sources */,
 				CEE5FFDF26F4B487007A48D2 /* SlideUpTimerMenuCell.swift in Sources */,
 				CEE5FF6126F495D1007A48D2 /* PlayerViewController.swift in Sources */,
 				CEE5FFD026F4AAD0007A48D2 /* Data.swift in Sources */,
