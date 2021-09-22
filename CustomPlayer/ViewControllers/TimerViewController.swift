@@ -20,6 +20,7 @@ final class TimerViewController: UIViewController {
     private var buttonHeightAndPadding: CGFloat { buttonHeight + buttonPadding }
     private let bottomSpace: CGFloat = 70
     private var tableViewHeight: CGFloat { tableviewCellHeight * CGFloat(slideUpViewDataSource.count) }
+    private let cellIdentifier = "SlideUpTimerMenuCell"
     
     lazy var headerLabel: UILabel = {
         let view =  UILabel()
@@ -50,7 +51,7 @@ final class TimerViewController: UIViewController {
         view.isScrollEnabled = false
         view.delegate = self
         view.dataSource = self
-        view.register(SlideUpTimerMenuCell.self, forCellReuseIdentifier: SlideUpTimerMenuCell.identifier)
+        view.register(SlideUpTimerMenuCell.self, forCellReuseIdentifier: cellIdentifier)
         return view
     }()
     
@@ -159,7 +160,7 @@ extension TimerViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: SlideUpTimerMenuCell.identifier, for: indexPath) as? SlideUpTimerMenuCell else {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SlideUpTimerMenuCell else {
             fatalError("No cell's registered")
         }
         

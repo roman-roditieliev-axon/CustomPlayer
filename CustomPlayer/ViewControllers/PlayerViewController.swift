@@ -28,8 +28,10 @@ final class PlayerViewController: UIViewController {
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var dislikeCountLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     var viewModel: PlayerViewModeling!
     var audioService: AudioPlayer?
+    private var timeRemaining: String = "--:--"
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -201,19 +203,18 @@ extension PlayerViewController: PlayerViewModelMultiDelegate {
 extension PlayerViewController: AudioPlayerDelegate {
     func resetView() {
         imageView.image = PlayerImageConstants.defaultImage
-        timeLeftLabel.text = "--:--"
-        timePlayedLabel.text = "--:--"
+        timeLeftLabel.text = timeRemaining
+        timePlayedLabel.text = timeRemaining
         descriptionLabel.text = ""
         setControlButtonsEnabledState(isEnabled: false)
     }
 
     func didGetData() {
         activityIndicator.stopAnimating()
-
         if audioService?.player != nil {
-        imageView.setImage(url: audioService?.podcast?.imageURL)
-        descriptionLabel.text = audioService?.podcast?.podcastDescription
-        setControlButtonsEnabledState(isEnabled: true)
+            imageView.setImage(url: audioService?.podcast?.imageURL)
+            descriptionLabel.text = audioService?.podcast?.podcastDescription
+            setControlButtonsEnabledState(isEnabled: true)
         }
     }
 
