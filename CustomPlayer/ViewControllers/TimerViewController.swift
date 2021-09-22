@@ -11,7 +11,7 @@ import UIKit
 final class TimerViewController: UIViewController {
     var timeRemaining: String = "--:--"
     private var selectedIndex: Int = 0
-    private let scheduler = Scheduler.shared
+    private let scheduler = Scheduler()
     
     private let tableviewCellHeight: CGFloat = 45
     private let labelHeight: CGFloat = 22
