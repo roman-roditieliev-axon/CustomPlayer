@@ -11,14 +11,12 @@ protocol SchedulerTimerViewControllerDelegate: AnyObject {
     func updateTimerInfo(endTime: Float, currentTime: Float)
 }
 
-final class Scheduler {
+class Scheduler {
     var timer: Timer!
     var endTime: Float = 0
     var schedulerMulticast = MulticastDelegate<SchedulerTimerViewControllerDelegate>()
     private var audioPlayer: AudioPlayer?
-    
-    static let shared = Scheduler()
-    
+    // Updated: remove singelton
     var currentTime: Float = 0 {
         didSet {
             schedulerMulticast.invokeDelegates({ delegate in delegate.updateTimerInfo(endTime: endTime, currentTime: currentTime) })
